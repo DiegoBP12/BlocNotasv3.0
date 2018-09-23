@@ -32,6 +32,11 @@ public class ViewBlocnotas extends javax.swing.JFrame {
         jmenu = new javax.swing.JMenuBar();
         jm_archivo = new javax.swing.JMenu();
         jm_abrir = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jm_cifrado = new javax.swing.JMenu();
+        jmcifrar = new javax.swing.JMenuItem();
+        jmdes = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jm_guardar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,6 +53,18 @@ public class ViewBlocnotas extends javax.swing.JFrame {
 
         jm_abrir.setText("Abrir...");
         jm_archivo.add(jm_abrir);
+        jm_archivo.add(jSeparator1);
+
+        jm_cifrado.setText("Cifrado");
+
+        jmcifrar.setText("Cifrar");
+        jm_cifrado.add(jmcifrar);
+
+        jmdes.setText("Decifrar");
+        jm_cifrado.add(jmdes);
+
+        jm_archivo.add(jm_cifrado);
+        jm_archivo.add(jSeparator2);
 
         jm_guardar.setText("Guardar");
         jm_archivo.add(jm_guardar);
@@ -108,9 +125,14 @@ public class ViewBlocnotas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     public javax.swing.JMenuItem jm_abrir;
     public javax.swing.JMenu jm_archivo;
+    public javax.swing.JMenu jm_cifrado;
     public javax.swing.JMenuItem jm_guardar;
+    public javax.swing.JMenuItem jmcifrar;
+    public javax.swing.JMenuItem jmdes;
     public javax.swing.JMenuBar jmenu;
     public javax.swing.JTextArea jta_texto;
     // End of variables declaration//GEN-END:variables
