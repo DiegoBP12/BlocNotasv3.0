@@ -46,7 +46,7 @@ public class ViewBlocnotas extends javax.swing.JFrame {
         jta_texto.setRows(5);
         jScrollPane1.setViewportView(jta_texto);
 
-        jmenu.setBackground(new java.awt.Color(153, 0, 0));
+        jmenu.setBackground(new java.awt.Color(0, 153, 153));
         jmenu.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
 
         jm_archivo.setText("Archivo");
