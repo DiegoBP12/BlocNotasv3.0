@@ -141,7 +141,32 @@ public class ModelBlocnotas {
      * Descifrara el texto introducido con el método Cesar
      */
     public void Caesar2String(){
-        
+        int ascii;
+        for(int i=0; i < mensaje.length(); i++){
+            if(mensaje.charAt(i) >= 'a' && mensaje.charAt(i) <= 'z'){
+                if((mensaje.charAt(i) - 1) < 'a'){
+                    ascii = ((int)mensaje.charAt(i));
+                    ascii = ascii - 1 + 26;
+                    caesar= caesar + ((char)ascii);
+                }else{
+                    ascii =((int)mensaje.charAt(i));
+                    ascii = ascii - 1;
+                    caesar = caesar + ((char)ascii);
+                }
+            }
+            else if(mensaje.charAt(i)>= 'A' && mensaje.charAt(i) <='Z'){
+                if((mensaje.charAt(i) - 1) < 'A'){
+                    ascii = ((int)mensaje.charAt(i));
+                    ascii = ascii - 1 + 26;
+                    caesar= caesar + ((char)ascii);
+                }else{
+                    ascii =((int)mensaje.charAt(i));
+                    ascii = ascii - 1;
+                    caesar = caesar + ((char)ascii);
+                }
+            }
+            
+        }
     }
 
   }

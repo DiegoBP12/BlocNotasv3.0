@@ -30,6 +30,8 @@ public class ControllerBlocnotas {
                     guardar();
             else if (e.getSource() == viewbloc.jmcifrar)
                     cifrar();
+            else if(e.getSource() == viewbloc.jmdes)
+                descifrar();
         }
     };
     public ControllerBlocnotas(ViewBlocnotas viewbloc, ModelBlocnotas modelbloc) {
@@ -38,6 +40,7 @@ public class ControllerBlocnotas {
         this.viewbloc.jm_guardar.addActionListener(ac);
         this.viewbloc.jm_abrir.addActionListener(ac);
         this.viewbloc.jmcifrar.addActionListener(ac);
+        this.viewbloc.jmdes.addActionListener(ac);
         initComponents();
     }
     public void abrir(){
@@ -53,9 +56,15 @@ public class ControllerBlocnotas {
         modelbloc.string2Caesar();
         viewbloc.jta_texto.setText(modelbloc.getCaesar());
     }
+    public void descifrar(){
+        modelbloc.setMensaje(viewbloc.jta_texto.getText());
+        modelbloc.Caesar2String();
+        viewbloc.jta_texto.setText(modelbloc.getCaesar());
+    }
     public void guardar(){
         modelbloc.setMensaje(viewbloc.jta_texto.getText());
         modelbloc.writeFile();
+        viewbloc.jta_texto.setText("");
     }
     private void initComponents(){
         viewbloc.setVisible(true);
