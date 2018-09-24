@@ -28,6 +28,8 @@ public class ControllerBlocnotas {
                     abrir();
             else if(e.getSource() == viewbloc.jm_guardar)
                     guardar();
+            else if (e.getSource() == viewbloc.jmcifrar)
+                    cifrar();
         }
     };
     public ControllerBlocnotas(ViewBlocnotas viewbloc, ModelBlocnotas modelbloc) {
@@ -44,6 +46,10 @@ public class ControllerBlocnotas {
     public void leer(){
         modelbloc.readFile();
         viewbloc.jta_texto.setText(modelbloc.getMensaje());
+    }
+    public void cifrar(){
+        viewbloc.jta_texto.setText(modelbloc.getMensaje());
+        
     }
     public void guardar(){
         modelbloc.setMensaje(viewbloc.jta_texto.getText());

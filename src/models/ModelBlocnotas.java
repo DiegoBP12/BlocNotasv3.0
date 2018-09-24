@@ -28,6 +28,7 @@ public class ModelBlocnotas {
        private String path;
        private String mensaje = "";
        boolean bandera = false;
+       private int ascii;
 
     public String getPath() {
         return path;
@@ -45,6 +46,13 @@ public class ModelBlocnotas {
         this.mensaje = mensaje;
     }
     
+     public int getAscii() {
+        return ascii;
+    }
+
+    public void setAscii(int ascii) {
+        this.ascii = ascii;
+    }
     /**
      * Permite seleccionar un archivo dentro de una ventana de dialogo
      */
@@ -95,5 +103,13 @@ public class ModelBlocnotas {
                 JOptionPane.showMessageDialog(viewbloc,"Error en I/O operación" + ex.getMessage());
                 }
             }
+    public void string2Code(){
+        
+    }
+    
+    public void Code2String(){
+        
+    }
+
   }
 
