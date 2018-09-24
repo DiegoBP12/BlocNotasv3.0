@@ -37,6 +37,7 @@ public class ControllerBlocnotas {
         this.modelbloc = modelbloc;
         this.viewbloc.jm_guardar.addActionListener(ac);
         this.viewbloc.jm_abrir.addActionListener(ac);
+        this.viewbloc.jmcifrar.addActionListener(ac);
         initComponents();
     }
     public void abrir(){
@@ -48,8 +49,9 @@ public class ControllerBlocnotas {
         viewbloc.jta_texto.setText(modelbloc.getMensaje());
     }
     public void cifrar(){
-        viewbloc.jta_texto.setText(modelbloc.getMensaje());
-        
+        modelbloc.setMensaje(viewbloc.jta_texto.getText());
+        modelbloc.string2Caesar();
+        viewbloc.jta_texto.setText(modelbloc.getCaesar());
     }
     public void guardar(){
         modelbloc.setMensaje(viewbloc.jta_texto.getText());

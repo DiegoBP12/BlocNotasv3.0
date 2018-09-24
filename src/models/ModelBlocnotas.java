@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import views.ViewBlocnotas;
@@ -28,7 +29,7 @@ public class ModelBlocnotas {
        private String path;
        private String mensaje = "";
        boolean bandera = false;
-       private int ascii;
+       String caesar = "";
 
     public String getPath() {
         return path;
@@ -46,12 +47,12 @@ public class ModelBlocnotas {
         this.mensaje = mensaje;
     }
     
-     public int getAscii() {
-        return ascii;
+    public String getCaesar(){
+        return caesar;
     }
-
-    public void setAscii(int ascii) {
-        this.ascii = ascii;
+    
+    public void setCaesar(String caesar){
+        this.caesar = caesar;
     }
     /**
      * Permite seleccionar un archivo dentro de una ventana de dialogo
@@ -103,11 +104,43 @@ public class ModelBlocnotas {
                 JOptionPane.showMessageDialog(viewbloc,"Error en I/O operación" + ex.getMessage());
                 }
             }
-    public void string2Code(){
-        
+    /**
+     * Cifrara el t exto introducido con el método Cesar
+     */
+    public void string2Caesar(){
+        int ascii;
+        for(int i=0; i < mensaje.length(); i++){
+            if(mensaje.charAt(i) >= 'a' && mensaje.charAt(i) <= 'z'){
+                if((mensaje.charAt(i) + 1) > 'z'){
+                    ascii = ((int)mensaje.charAt(i));
+                    ascii = ascii + 1 - 26;
+                    caesar= caesar + ((char)ascii);
+                }else{
+                    ascii =((int)mensaje.charAt(i));
+                    ascii = ascii + 1;
+                    caesar = caesar + ((char)ascii);
+                }
+            }
+            else if(mensaje.charAt(i)>= 'A' && mensaje.charAt(i) <='Z'){
+                if((mensaje.charAt(i) + 1) > 'Z'){
+                    ascii = ((int)mensaje.charAt(i));
+                    ascii = ascii + 1 - 26;
+                    caesar= caesar + ((char)ascii);
+                }else{
+                    ascii =((int)mensaje.charAt(i));
+                    ascii = ascii + 1;
+                    caesar = caesar + ((char)ascii);
+                }
+            }
+            
+        }
     }
+        
     
-    public void Code2String(){
+    /**
+     * Descifrara el texto introducido con el método Cesar
+     */
+    public void Caesar2String(){
         
     }
 
